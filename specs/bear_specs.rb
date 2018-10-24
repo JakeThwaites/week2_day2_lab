@@ -28,26 +28,43 @@ class FishTest < MiniTest::Test
     assert_equal(expected, actual)
   end
 
-  def test_fish_has_been_eaten
-    fish_before_eating = @amazon.fishes.count
-    assert_equal(2, fish_before_eating)
+  # def test_eating_fish__fish_has_been_eaten
+  #   fishes_before_eating = @amazon.fishes.count
+  #   assert_equal(2, fish_before_eating)
+  #
+  #   stomach_emptiness_before = @paddington.empty_stomach
+  #   assert_equal(true, stomach_emptiness_before)
+  #
+  #   @paddington.eat_fish(@amazon)
+  #
+  #    fishes_after_eating = @amazon.fishes.count
+  #    assert_equal(1, fish_after_eating)
+  #
+  #    stomach_emptiness_after = @paddington.empty_stomach
+  #    assert_equal(false, stomach_emptiness_after)
+  # end
 
-    stomach_emptiness_before = @paddington.empty_stomach
-    assert_equal(true, stomach_emptiness_before)
 
-    @paddington.eat_fish(@amazon)
+  def test_eating_fish__return_statment
+    # fishes_before_eating = @amazon.fishes.count
+    # assert_equal(2, fish_before_eating)
+    #
+    # stomach_emptiness_before = @paddington.empty_stomach
+    # assert_equal(true, stomach_emptiness_before)
+    #
+    # @paddington.eat_fish(@amazon)
 
-     fish_after_eating = @amazon.fishes.count
-     assert_equal(1, fish_after_eating)
-
-     stomach_emptiness_after = @paddington.empty_stomach
-     assert_equal(false, stomach_emptiness_after)
+    expected = ( "Oh no, #{fish_to_be_eaten} was eaten!" || "#{@bear.name} was too slow! The fish escaped!")
+    actual = @paddington.eat_fish(@amazon)
+    assert_equal(expected, actual)
   end
 
   def test_roar
     expected = "ROAR!! Wow, that was so scary!"
     actual = @paddington.roar
     assert_equal(expected, actual)
+
+    assert_equal()
   end
 
   def test_count_bear_food
